@@ -8,8 +8,8 @@ class Service {
  	Service(int argc, char* argv[]);
  	~Service() { }
 
- 	template<class C>
- 	int run(C worker);
+ 	template<class Function, class... Args>
+ 	int run(Function&& f, Args&&... args);
 
  protected:
  	struct Impl;
